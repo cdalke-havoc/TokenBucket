@@ -25,11 +25,11 @@ SOFTWARE.
 #include <cassert>
 #include <iostream>
 
-#ifdef __unix__
-# include <unistd.h>
-#elif defined _WIN32
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 # include <windows.h>
 #define sleep(x) Sleep(1000 * (x))
+#else
+# include <unistd.h>
 #endif
 
 int main() {
