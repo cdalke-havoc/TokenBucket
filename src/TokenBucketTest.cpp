@@ -31,7 +31,7 @@ int main() {
   using namespace rigtorp;
   
   {
-    TokenBucket tb(350, 1050);
+    TokenBucket<> tb(350, 1050);
 
     assert(tb.consume(1050));
     assert(!tb.consume(1));
@@ -41,7 +41,7 @@ int main() {
   }
 
   {
-    TokenBucket tb(350, 1050);
+    TokenBucket<> tb(350, 1050);
 
     assert(!tb.consume(1051));
   }
