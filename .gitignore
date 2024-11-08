@@ -1,2 +1,7 @@
-build
+build/
+cmake-build-*
+.vs/
+.vscode/
+.idea/
+.project
 *~
