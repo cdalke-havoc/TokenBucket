@@ -26,7 +26,7 @@ SOFTWARE.
 #include <iostream>
 #include <unistd.h>
 
-int main(int arv, char *argv[]) {
+int main() {
 
   using namespace rigtorp;
   
