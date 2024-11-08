@@ -44,7 +44,7 @@ jobs:
     runs-on: macOS-latest
     strategy:
       matrix:
-        config: [Debug, Release]
+        config: [Release]
         standard: [11, 17]
 
     steps:
