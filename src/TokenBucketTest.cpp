@@ -24,13 +24,8 @@ SOFTWARE.
 #include <rigtorp/TokenBucket.h>
 #include <cassert>
 #include <iostream>
-
-#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
-# include <windows.h>
-#define sleep(x) Sleep(1000 * (x))
-#else
-# include <unistd.h>
-#endif
+#include <thread>
+#include <chrono>
 
 int main() {
 
@@ -41,7 +36,9 @@ int main() {
 
     assert(tb.consume(1050));
     assert(!tb.consume(1));
-    sleep(1);
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
     assert(tb.consume(350));
     assert(!tb.consume(1));
   }
